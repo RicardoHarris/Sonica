@@ -3,14 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.student.sonica.MainActivity">
+    tools:context="com.example.student.sonica.MainActivity"
+    android:background="#000"
+    >
 
     <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\u266b Sonica \u266b"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:textColor="#00e5e5"
+        android:background="#001616"/>
+    <ImageView
+        android:id="@+id/acon"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/vinyl"
+        android:layout_below="@id/head"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/subhead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Title"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/acon"
+        android:textSize="30dp"
+        android:textColor="#00e5e5"/>
+    <TextView
+        android:id="@+id/midtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Artist"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/subhead"
+        android:textSize="20dp"
+        android:textColor="#00e5e5"/>
+    <Button
+        android:id="@+id/pse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/midtext"
+        android:onClick = "pauseSong"
+        android:text="| |"
+        android:textSize="20dp"/>
+    <Button
+        android:id="@+id/ply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/pse"
+        android:layout_below="@id/midtext"
+        android:onClick = "playSong"
+        android:text=">"
+        android:textSize="20dp"/>
 </RelativeLayout>

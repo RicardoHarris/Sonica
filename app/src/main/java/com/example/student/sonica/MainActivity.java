@@ -13,8 +13,9 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer song1;
     public Button playButtonVar, pauseButtonVar, rewindButtonVar, fastForwardButtonVar, stopButtonVar;
     public TextView currentTimeVar, endTimeVar;
-    public double endTimeMS;
+    public double endTimeMS = song1.getDuration();
     public Handler myHandler = new Handler();
+    public int currentTimeMS = song1.getCurrentPosition();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
         pauseButtonVar.setEnabled(false);
         stopButtonVar.setEnabled(false);
-        int endTimeMS = song1.getDuration();
-        int currentTimeMS = song1.getCurrentPosition();
-        int endtimeMin = (int) endTimeMS/1000/60;
-        int endtimeS = (int) (endTimeMS/1000) % 60;
+        int endTimeMin = (int) endTimeMS/1000/60;
+        int endTimeS = (int) (endTimeMS/1000) % 60;
         int currentMinutes =(int) (currentTimeMS/1000/60);
-        int currentSeconds = ((int)(currentTimeMS/1000)) %60;
+        int currentSeconds = (int)((currentTimeMS/1000) %60);
 
         myHandler.postDelayed(UpdateSongTime, 100);
-        endTimeMS.setText("Text");
+        //endTimeMS.setText("Text");
     }
     public void playSong(View view) {
         Toast.makeText(getApplicationContext(), "Playing song",Toast.LENGTH_SHORT).show();
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Pausing song",Toast.LENGTH_SHORT).show();
         song1.pause();
         pauseButtonVar.setEnabled(false);
-        playButtonVar.setEnabled(true)
+        playButtonVar.setEnabled(true);
     }
 
 
@@ -82,5 +81,5 @@ public class MainActivity extends AppCompatActivity {
 
             myHandler.postDelayed(this, 100);
         }
-    }
+    };
 }

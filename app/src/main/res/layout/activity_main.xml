@@ -63,7 +63,7 @@
         android:id="@+id/rwn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/pse"
+        android:layout_toLeftOf="@id/stop"
         android:layout_below="@id/midtext"
         android:onClick = "playSong"
         android:text="<"
@@ -72,7 +72,7 @@
         android:id="@+id/fwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/pse"
+        android:layout_toRightOf="@id/ply"
         android:layout_below="@id/midtext"
         android:onClick = "playSong"
         android:text=">>"
@@ -81,13 +81,17 @@
         android:id="@+id/stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/pse"
+        android:layout_toLeftOf="@id/pse"
         android:layout_below="@id/midtext"
         android:onClick = "stopSong"
         android:text="[  ]"
         android:textSize="20dp"/>
     <TextView
-        android:id="@+id/tim"
+        android:id="@+id/endtim"
+        android:layout_width="20sp"
+        android:layout_height="20sp" />
+    <TextView
+        android:id="@+id/curtim"
         android:layout_width="20sp"
         android:layout_height="20sp" />
 </RelativeLayout>
